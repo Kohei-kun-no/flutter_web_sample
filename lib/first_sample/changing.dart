@@ -39,15 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 300,
                         child: Image.asset('assets/images/profile_image.png'),
                       ),
-                      SizedBox(
-                        height: 40,
-                      ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          'I like to watch Football games',
+                          "I am not good at it, but I like it.",
+                          style: TextStyle(fontSize: 20),
                         ),
                       ),
+                      Text(''),
                     ],
                   )),
                   SizedBox(
