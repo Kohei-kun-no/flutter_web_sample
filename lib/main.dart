@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Web Training',
+        title: '簑田康平 / minoda kohei',
         debugShowCheckedModeBanner: false,
         home: MyHomePage()
     );
