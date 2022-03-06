@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                              'December , 2021 : I have started my working as software engineer'),
+                              'December , 2020 : I have started my working as software engineer'),
                         ),
                         Text(
                           'My Accounts',
@@ -151,8 +151,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               'Python',
                               style: TextStyle(fontSize: 24),
                             ),
-                            Text('Recently I started to write python.'),
                             Text('Mainly for data analytics'),
+                            Text('I like to study statistics.'),
                             Image.asset('assets/images/python_image.png'),
                           ],
                         ),
