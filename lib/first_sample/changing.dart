@@ -9,7 +9,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   String githubUrl = 'https://github.com/Kohei-kun-no';
   String twitterUrl = 'https://twitter.com/home?lang=ja';
   String instagramUrl = 'https://www.instagram.com/koheiminoda/';
@@ -24,40 +23,65 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(
+              height: 60,
+            ),
             Container(
               width: double.infinity,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(child: Column(
+                  Container(
+                      child: Column(
                     children: [
-                      Text('photo'),
-                      SizedBox(height: 40,),
+                      Container(
+                        width: 250,
+                        height: 300,
+                        child: Image.asset('assets/images/profile_image.png'),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text('I like to watch Football games',),
+                        child: Text(
+                          'I like to watch Football games',
+                        ),
                       ),
                     ],
                   )),
-                  SizedBox(width: 200,),
+                  SizedBox(
+                    width: 100,
+                  ),
                   Container(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Background', style: TextStyle(fontSize: 40),),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text('December 5, 2000 : I was born.',),
+                        Text(
+                          'Background',
+                          style: TextStyle(fontSize: 40),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text('April , 2019 : I enrolled in Kyushu University',),
+                          child: Text(
+                            'December 5, 2000 : I was born.',
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text('December , 2021 : I have started my working as software engineer'),
+                          child: Text(
+                            'April , 2019 : I enrolled in Kyushu University',
+                          ),
                         ),
-                        Text('My Accounts', style: TextStyle(fontSize: 40),),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                              'December , 2021 : I have started my working as software engineer'),
+                        ),
+                        Text(
+                          'My Accounts',
+                          style: TextStyle(fontSize: 40),
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: ElevatedButton(
@@ -91,45 +115,77 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 100,),
-            Container(
-              child: Text('My Skills', style: TextStyle(fontSize: 40),),
+            SizedBox(
+              height: 40,
             ),
             Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    child: Column(
-                      children: [
-                        Text('Flutter'),
-                        Text('I made iOS App, Android App, and Web App'),
-                        Text('This web page is made by Flutter'),
-                        Image.asset('assets/images/flutter_image.png'),
-                      ],
+              child: Text(
+                'My Skills',
+                style: TextStyle(fontSize: 40),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      child: Column(
+                        children: [
+                          Text(
+                            'Flutter',
+                            style: TextStyle(fontSize: 24),
+                          ),
+                          Text('I made iOS App, Android App, and Web App'),
+                          Text('This web page is made by Flutter'),
+                          Image.asset('assets/images/flutter_image.png'),
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    child: Column(
-                      children: [
-                        Text('Python'),
-                        Text('Recently I started to write python.'),
-                        Text('Mainly for data analytics'),
-                        Image.asset('assets/images/python_image.png'),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Container(
+                        child: Column(
+                          children: [
+                            Text(
+                              'Python',
+                              style: TextStyle(fontSize: 24),
+                            ),
+                            Text('Recently I started to write python.'),
+                            Text('Mainly for data analytics'),
+                            Image.asset('assets/images/python_image.png'),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                  Container(
-                    child: Column(
-                      children: [
-                        Text('Ruby on Rails'),
-                        Text('At First, I made web app by Rails'),
-                        Text('I do not write recently...'),
-                        Image.asset('assets/images/rails_image.png'),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Container(
+                        child: Column(
+                          children: [
+                            Text(
+                              'Ruby on Rails',
+                              style: TextStyle(fontSize: 24),
+                            ),
+                            Text('At First, I made web app by Rails'),
+                            Text('I do not write recently...'),
+                            Image.asset('assets/images/rails_image.png'),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Container(
+                child: Text('PRODUCED BY KOHEI MINODA'),
               ),
             ),
           ],
@@ -138,16 +194,15 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void launchGithub () async {
+  void launchGithub() async {
     if (!await launch(githubUrl)) throw 'Could not launch $githubUrl';
   }
 
-  void launchTwitter () async {
+  void launchTwitter() async {
     if (!await launch(twitterUrl)) throw 'Could not launch $twitterUrl';
   }
 
-  void launchInstagram () async {
+  void launchInstagram() async {
     if (!await launch(instagramUrl)) throw 'Could not launch $instagramUrl';
   }
-
 }
