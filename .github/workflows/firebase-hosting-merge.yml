@@ -11,11 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: 'stable'
-      - run: flutter pub get
-      - run: flutter test --platform chrome
+
+      - name: Install Flutter
+        run: git clone https://github.com/flutter/flutter.git
+      - name: Add path
+        run: echo "$(pwd)/flutter/bin" >> $GITHUB_PATH
+      - name: Download Flutter packages
+        run: flutter pub get
+
       - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
