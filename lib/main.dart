@@ -7,17 +7,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Web Training',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: DefaultTextStyle.merge(
-          style: TextStyle(
-              height: 1.5
-          ),
-          child: MyHomePage()
-      ),
+        title: 'Flutter Web Training',
+        debugShowCheckedModeBanner: false,
+        home: MyHomePage()
     );
   }
 }
