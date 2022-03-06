@@ -5,24 +5,12 @@ name: Deploy to Firebase Hosting on merge
 'on':
   push:
     branches:
-      - main
+      - master
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Install Flutter
-        run: git clone https://github.com/flutter/flutter.git
-
-      # PATH を通す
-      - name: Add path
-        run: echo "$(pwd)/flutter/bin" >> $GITHUB_PATH
-
-      # パッケージのダウンロード
-      - name: Download Flutter packages
-        run: flutter pub get
-
       - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
